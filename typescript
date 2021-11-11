@@ -1,0 +1,128 @@
+Script started on Thu Nov 11 09:51:51 2021
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ 
+bash-3.2$ cd /Docu[K[K[K[K[K[K[K[Kpwd
+/Users/emdlvanderheijden/Documents/Work/Postdoc_VI _UU/Research/Courses/Writing_reproducible_code/good-enough-project-template
+bash-3.2$ cd [K[K[Kls [K
+CITATION.md		config			results
+LICENSE.md		data			src
+README.md		docs			typescript
+bin			requirements.txt
+bash-3.2$ cp /Doci[Ki[Kuments/[K[K[K[K[K[K[K[Kcuments/Work/Postdoc_VI _[K[K_[K)[K_[K\ UU_UU[C[C/Research/Porjects/[K[K[K[K[K[K[K[Krojects/Bayesian_work/Re-analysis_ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ks_ Bayseian[K[K[K[K[Kesian/Database[K[K[K[K[K[K[K[K"Database HipMGR.[K[K[K[K[KPMGR.txt"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C _UU/Research/Projects/Bayesian_work/Re-analysis_Ba[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"Postdoc_VI _UU/Research/Projects/Bayesian_work/Re-analysis_B[1@a[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"U/Research/Projects/Bayesian_work/Re-analysis_[1@B[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CU/Research/Projects/Bayesian_work/Re-analysis_B[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"/Research/Projects/Bayesian_work/Re-analysis_[1@B[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C data/raw
+cp: /Documents/Work/Postdoc_VI _UU/Research/Projects/Bayesian_work/Re-analysis_Bayesian/Database HiPMGR.txt: No such file or directory
+bash-3.2$ cp /Documents/Work/"Postdoc_VI _UU"/Research/Projects/Bayesian_work/Re-analysis__Bayesian/"Database HiPMGR.txt" data/raw[A[C[C[C[C[C[C[C[C[C[C[C[C[C~/Documents/Work/"Postdoc_VI _UU"/Research/Projects/Bayesian_work/Re-analysis[1@_[A[C[C[C[C[C[C[C[C[C[C[C[C
+
+cp: /Users/emdlvanderheijden/Documents/Work/Postdoc_VI _UU/Research/Projects/Bayesian_work/Re-analysis_Bayesian/Database HiPMGR.txt: No such file or directory
+bash-3.2$ cp ~/Documents/Work/"Postdoc_VI _UU"/Research/Projects/Bayesian_work/Re-analysiss_Bayesian/"Database HiPMGR.txt" data/raw[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnalysis_[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CAnalysis[1@_[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+cp: /Users/emdlvanderheijden/Documents/Work/Postdoc_VI _UU/Research/Projects/Bayesian_work/Re-Analysis_Bayesian/Database HiPMGR.txt: No such file or directory
+bash-3.2$ cp ~/Documents/Work/"Postdoc_VI _UU"/Research/Projects/Bayesian_work/Re-Analysiss_Bayesian/"Database HiPMGR.txt" data/raw[1@C[1@h[1@3[1@_
+bash-3.2$ ls data/raw
+Database HiPMGR.txt
+bash-3.2$ ls data/raw[Kc[Kls data/rawcp ~/Documents/Work/"Postdoc_VI _UU"/Research/Projects/Bayesian_work/Re-Analysiss_Ch3_Bayesian/"Database HiPMGR.txt" data/raw[C[K[K[K[K[K[K[K[K[C[C[C[1P [1P [1P [1P [1P [1P [1P [1P [1P [1P [1P [K[1P [1P [1P [1P [1P [1P [1P [1P [1P ' [1P " S c r i p t [C B a y e s i a n [C H i p M G R _ v 3 . R m d " 
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-apvXc] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-apvXc] source_file ... target_directory
+bash-3.2$ cp ~/Documents/Work/"Postdoc_VI _UU"/Research/Projects/Bayesian_work/Re-Analysiss_Ch3_Bayesian/"Script Bayesian HipMGR_v3.Rmd" .
+bash-3.2$ ls
+CITATION.md			data
+LICENSE.md			docs
+README.md			requirements.txt
+Script Bayesian HipMGR_v3.Rmd	results
+bin				src
+config				typescript
+bash-3.2$ lscp ~/Documents/Work/"Postdoc_VI _UU"/Research/Projects/Bayesian_work/Re-Analysiss_Ch3_Bayesian/"Script Bayesian HipMGR_v3.Rmd" .[K[K[K" .[A[C[C[C[C[C[C[C[C[C[Cls[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[Ccp ~/Documents/Work/"Postdoc_VI _UU"/Research/Projects/Bayesian_work/Re-Analysiss_Ch3_Bayesian/"Script Bayesian HipMGR_v3.Rmd" .[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@S[1@c[1@r[1@i[1@p[1@t[1@-[1@B[1@a[1@y[1@e[1@s[1@i[1@a[1@n[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[1P .[1P .S .c .r .i .p .t .- .a .[1P .B .a .y .e .s .i .a .n .- .H .i .p .M .G .R .. .h .t .m .l .[C[C[Kdata[K[K[Kics==[K[K[K[K[Kocs/manuscript[K[K[K[K[K[K[K[K[K[Kreports[K[K[K[K[K[K[Kmanuscript[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kresults/output
+bash-3.2$ cp ~/Documents/Work/"Postdoc_VI _UU"/Research/Projects/Bayesian_work/Re-Analysiss_Ch3_Bayesian/Script-Bayesian-HipMGR.html results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output[1P results/output2 results/output0 results/output2 results/output1 results/output1 results/output0 results/output1 results/output3 results/outputB results/outputa results/outputy results/outpute results/outputs results/outputi results/outputa results/outputn results/output_ results/outputl results/outputa results/outputt results/outpute results/outputn results/outputt results/output_ results/outputc results/outputl results/outputa results/outputs results/outputs results/output_ results/outputa results/outputn results/outputa results/outputl results/outputy results/outputs results/outputi results/outputs results/output_ results/outputH results/outputi results/outputP results/output_ results/outputM results/outputG results/outputR results/output. results/outputp results/outputd results/outputf results/output
+bash-3.2$ pwd
+/Users/emdlvanderheijden/Documents/Work/Postdoc_VI _UU/Research/Courses/Writing_reproducible_code/good-enough-project-template
+bash-3.2$ mv good-en[K[K[K[K[K[K[Kgood-enough0[K-project-templta[K[Kate/S[K"Script Bayesian HipMGR_v3/[K.Rmd good-enough-proj ect-template/docs/manuscript[K[K[K[K[K[K[K[K[K[Kreo[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kpwd
+/Users/emdlvanderheijden/Documents/Work/Postdoc_VI _UU/Research/Courses/Writing_reproducible_code/good-enough-project-template
+bash-3.2$ git n[Kinit
+[33mhint: Using 'master' as the name for the initial branch. This default branch name[m
+[33mhint: is subject to change. To configure the initial branch name to use in all[m
+[33mhint: of your new repositories, which will suppress this warning, call:[m
+[33mhint: [m
+[33mhint: 	git config --global init.defaultBranch <name>[m
+[33mhint: [m
+[33mhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and[m
+[33mhint: 'development'. The just-created branch can be renamed via this command:[m
+[33mhint: [m
+[33mhint: 	git branch -m <name>[m
+Initialized empty Git repository in /Users/emdlvanderheijden/Documents/Work/Postdoc_VI _UU/Research/Courses/Writing_reproducible_code/good-enough-project-template/.git/
+bash-3.2$ git add *
+The following paths are ignored by one of your .gitignore files:
+bin
+[33mhint: Use -f if you really want to add them.[m
+[33mhint: Turn this message off by running[m
+[33mhint: "git config advice.addIgnoredFile false"[m
+bash-3.2$ git commit -m "First commit";2D;2D;2D[K[K[K[K[K[K[K[K[K
+[master (root-commit) de0f28c] First commit
+ 14 files changed, 1972 insertions(+)
+ create mode 100644 CITATION.md
+ create mode 100644 LICENSE.md
+ create mode 100644 README.md
+ create mode 100644 Script Bayesian HipMGR_v3.Rmd
+ create mode 100644 config/.gitkeep
+ create mode 100644 docs/manuscript/.gitkeep
+ create mode 100644 docs/report/.gitkeep
+ create mode 100644 requirements.txt
+ create mode 100644 results/figures/.gitkeep
+ create mode 100644 results/output/.gitkeep
+ create mode 100644 results/output/20211013Bayesian_latent_class_analysis_HiP_MGR.pdf
+ create mode 100644 results/output/Script-Bayesian-HipMGR.html
+ create mode 100644 src/.gitkeep
+ create mode 100644 typescript
+bash-3.2$ pwd
+/Users/emdlvanderheijden/Documents/Work/Postdoc_VI _UU/Research/Courses/Writing_reproducible_code/good-enough-project-template
+bash-3.2$ ls good-enough-project-template
+ls: good-enough-project-template: No such file or directory
+bash-3.2$ ls
+CITATION.md			data
+LICENSE.md			docs
+README.md			requirements.txt
+Script Bayesian HipMGR_v3.Rmd	results
+bin				src
+config				typescript
+bash-3.2$ ls -a
+.				bin
+..				config
+.DS_Store			data
+.git				docs
+.gitignore			requirements.txt
+CITATION.md			results
+LICENSE.md			src
+README.md			typescript
+Script Bayesian HipMGR_v3.Rmd
+bash-3.2$ nano .gito[Kignore
+[?1049h[1;66r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.0.6                 File: .gitignore                                        [3;1H(B[m# exclude compiled binaries and external models[4d/bin[6d# exclude data from source control by default[7d/data/temp[8d/data/processed[9d/data/raw[64;37H(B[0;7m[ Read 7 lines ][65d^G(B[m Get Help   (B[0;7m^O(B[m WriteOut   (B[0;7m^R(B[m Read File  (B[0;7m^Y(B[m Prev Page  (B[0;7m^K(B[m Cut Text   (B[0;7m^C(B[m Cur Pos[66d(B[0;7m^X(B[m Exit[15G(B[0;7m^J(B[m Justify    (B[0;7m^W(B[m Where Is   (B[0;7m^V(B[m Next Page  (B[0;7m^U(B[m UnCut Text (B[0;7m^T(B[m To Spell[3d[65d[J[66;89H[66;1H[?1049l[?1l>bash-3.2$ gt[Kit remoe[Kr[Kte add origin git@github:[EMDLvdHEIJDEN'[K]/[good-enough-project-templayte [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[Kte] .git
+bash-3.2$ git ush -u origin master
+git: 'ush' is not a git command. See 'git --help'.
+
+The most similar command is
+	push
+bash-3.2$ git ush -u origin master[1@p
+ssh: Could not resolve hostname github: nodename nor servname provided, or not known
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+bash-3.2$ git push -u origin master
+ssh: Could not resolve hostname github: nodename nor servname provided, or not known
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+bash-3.2$ git push -u origin master[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cremote add origin git@github:[EMDLvdHEIJDEN]/[good-enough-project-template]..git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C].g[1Pit[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C.gi[1Pt[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cush -u origin master[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cremote add origin git@github:[EMDLvdHEIJDEN]/[good-enough-project-template.ggit[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgood-enough-project-template.gi[1Pt[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/good-enough-project-template.git[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CEMDLvdHEIJDEN/good-enough-project-template.git [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+error: remote origin already exists.
+bash-3.2$ git remote add origin git@github:EMDLvdHEIJDEN/good-enough-project-template.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+error: remote origin already exists.
+bash-3.2$ 
