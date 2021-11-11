@@ -125,4 +125,96 @@ bash-3.2$ git push -u origin master[C[C[C[C[C[C[C[C[C[C[C[C[C[C[
 error: remote origin already exists.
 bash-3.2$ git remote add origin git@github:EMDLvdHEIJDEN/good-enough-project-template.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
 error: remote origin already exists.
-bash-3.2$ 
+bash-3.2$ git [K[K[K[Kpwd
+/Users/emdlvanderheijden/Documents/Work/Postdoc_VI _UU/Research/Courses/Writing_reproducible_code/good-enough-project-template
+bash-3.2$ git init
+[33mhint: Using 'master' as the name for the initial branch. This default branch name[m
+[33mhint: is subject to change. To configure the initial branch name to use in all[m
+[33mhint: of your new repositories, which will suppress this warning, call:[m
+[33mhint: [m
+[33mhint: 	git config --global init.defaultBranch <name>[m
+[33mhint: [m
+[33mhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and[m
+[33mhint: 'development'. The just-created branch can be renamed via this command:[m
+[33mhint: [m
+[33mhint: 	git branch -m <name>[m
+Initialized empty Git repository in /Users/emdlvanderheijden/Documents/Work/Postdoc_VI _UU/Research/Courses/Writing_reproducible_code/good-enough-project-template/.git/
+bash-3.2$ git add *
+The following paths are ignored by one of your .gitignore files:
+bin
+[33mhint: Use -f if you really want to add them.[m
+[33mhint: Turn this message off by running[m
+[33mhint: "git config advice.addIgnoredFile false"[m
+bash-3.2$ git cm[Kommit -m "First commit"
+[master (root-commit) f569c9e] First commit
+ 14 files changed, 2042 insertions(+)
+ create mode 100644 CITATION.md
+ create mode 100644 LICENSE.md
+ create mode 100644 README.md
+ create mode 100644 Script Bayesian HipMGR_v3.Rmd
+ create mode 100644 config/.gitkeep
+ create mode 100644 docs/manuscript/.gitkeep
+ create mode 100644 docs/report/.gitkeep
+ create mode 100644 requirements.txt
+ create mode 100644 results/figures/.gitkeep
+ create mode 100644 results/output/.gitkeep
+ create mode 100644 results/output/20211013Bayesian_latent_class_analysis_HiP_MGR.pdf
+ create mode 100644 results/output/Script-Bayesian-HipMGR.html
+ create mode 100644 src/.gitkeep
+ create mode 100644 typescript
+bash-3.2$ git remote add origin git@github.com:EMDLvdE[KHEIJDEN/good-enough-project-template .git
+bash-3.2$ git push -u origina[K master
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+bash-3.2$ git push -u origin master
+Enumerating objects: 15, done.
+Counting objects:   6% (1/15)Counting objects:  13% (2/15)Counting objects:  20% (3/15)Counting objects:  26% (4/15)Counting objects:  33% (5/15)Counting objects:  40% (6/15)Counting objects:  46% (7/15)Counting objects:  53% (8/15)Counting objects:  60% (9/15)Counting objects:  66% (10/15)Counting objects:  73% (11/15)Counting objects:  80% (12/15)Counting objects:  86% (13/15)Counting objects:  93% (14/15)Counting objects: 100% (15/15)Counting objects: 100% (15/15), done.
+Delta compression using up to 8 threads
+Compressing objects:   9% (1/11)Compressing objects:  18% (2/11)Compressing objects:  27% (3/11)Compressing objects:  36% (4/11)Compressing objects:  45% (5/11)Compressing objects:  54% (6/11)Compressing objects:  63% (7/11)Compressing objects:  72% (8/11)Compressing objects:  81% (9/11)Compressing objects:  90% (10/11)Compressing objects: 100% (11/11)Compressing objects: 100% (11/11), done.
+Writing objects:   6% (1/15)Writing objects:  13% (2/15)Writing objects:  20% (3/15)Writing objects:  26% (4/15)Writing objects:  33% (5/15)Writing objects:  40% (6/15)Writing objects:  46% (7/15)Writing objects:  53% (8/15)Writing objects:  60% (9/15)Writing objects:  66% (10/15)Writing objects:  73% (11/15)Writing objects:  80% (12/15)Writing objects:  80% (12/15), 3.27 MiB | 2.68 MiB/sWriting objects:  86% (13/15), 3.27 MiB | 2.68 MiB/sWriting objects:  86% (13/15), 6.30 MiB | 2.48 MiB/sWriting objects:  86% (13/15), 7.54 MiB | 2.44 MiB/sWriting objects:  93% (14/15), 7.54 MiB | 2.44 MiB/sWriting objects: 100% (15/15), 7.54 MiB | 2.44 MiB/sWriting objects: 100% (15/15), 8.17 MiB | 2.41 MiB/s, done.
+Total 15 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: This repository moved. Please use the new location:[K
+remote:   git@github.com:EMDLvdHeijden/good-enough-project-template.git[K
+To github.com:EMDLvdHEIJDEN/good-enough-project-template.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+bash-3.2$ touch anotherfile.txt
+bash-3.2$ ls
+CITATION.md			data
+LICENSE.md			docs
+README.md			requirements.txt
+Script Bayesian HipMGR_v3.Rmd	results
+anotherfile.txt			src
+bin				typescript
+config
+bash-3.2$ git commit anotherfile.txt -m
+error: switch `m' requires a value
+bash-3.2$ git commit anotherfile.txt -m "My commit message"
+error: pathspec 'anotherfile.txt' did not match any file(s) known to git
+bash-3.2$ git add anotherfile.txt
+bash-3.2$ git add anotherfile.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit anotherfile.txt -m "My commit message"[K
+error: switch `m' requires a value
+bash-3.2$ git commit anotherfile.txt -m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Padd anotherfile.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit anotherfile.txt -m "My commit message"
+[master 4b35f82] My commit message
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 anotherfile.txt
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   typescript[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m.DS_Store[m
+	[31m.gitignore[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add typescr
