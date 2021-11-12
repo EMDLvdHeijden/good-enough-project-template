@@ -1,0 +1,7 @@
+install.packages("knitr")
+install.packages("rjags")
+install.packages("ggplot2")
+install.packages("coda")
+install.packages("epiR")
+install.packages("R2OpenBUGS")
+install.packages("mcmcplots")
