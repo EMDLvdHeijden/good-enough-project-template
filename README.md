@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/EMDLvdHeijden/good-enough-project-template/master)
+
 # Bayesian LCA to estimate test performance for bTB diagnostics in buffaloes
 
 This project takes the test outcome of two diagnostic tests for bovine tuberculosis, the tuberculin skin test and a serological assay, from at least two different populations, and calculates the prevalence of the disease and the test performance, in terms of sensitivity (Se) and specificity (Sp) using a Bayesian latent class analysis based on the Hui-Walter model (Hui SL, Walter SD. Biometrics. 1980). The data has to satisfy the underlying assumptions:
