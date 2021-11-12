@@ -1,0 +1,401 @@
+---
+title: "Bayesian_latent_class_analysis_HiP_MGR_v3"
+author: "Elise_van_der_Heijden"
+date: "10/12/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE, cache=FALSE}
+require("knitr")
+opts_knit$set(echo = TRUE)
+opts_knit$set(root.dir = "~/good-enough-project-template")
+```
+
+```{r Load necessary packages}
+library(rjags)
+library(ggplot2)
+library(coda)
+getwd()
+```
+
+```{r Load the data}
+# Load database HiPMGR
+btb <- read.delim("./Database_HiPMGR_randomized.txt")
+View(btb)
+str(btb)
+```
+
+```{r Format the dataframe}
+# Make a table of the various test result combinations
+# and stratify it over the two populations
+pop <- t(matrix(as.vector(table(btb$TBELISA_Result,
+                                btb$TST_Result,
+                                btb$Park_ID)), 4, 2))
+View(pop)
+
+# If you want to make this table without stratifying on population
+pop_all <- t(matrix(as.vector(table(btb$TST_Result, btb$TBELISA_Result)), 4))
+rm(pop_all)
+
+# Give the table column- and rownames and have a look at the data
+# test 1 = TST; test 2 = TB ELISA
+colnames(pop) <- c("-/-", "-/+", "+/-", "+/+")
+rownames(pop) <- c("A", "B")
+pop
+
+np <- nrow(pop)
+# Create vector of population counts
+n <- apply(pop, 1, sum)
+```
+
+```{r Run the first model}
+# Define the model
+model1 <- "model{
+  for (i in 1:2) {
+    p[i] ~ dbeta(1,1)
+    pop[i, 1:4] ~ dmulti(par[i,1:4], n[i])
+    par[i, 4] <- p[i]*Se1*Se2 + (1-p[i])*(1-Sp1)*(1-Sp2)
+    par[i, 2] <- p[i]*Se1*(1-Se2) + (1-p[i])*(1-Sp1)*Sp2
+    par[i, 3] <- p[i]*(1-Se1)*Se2 + (1-p[i])*Sp1*(1-Sp2)
+    par[i, 1] <- p[i]*(1-Se1)*(1-Se2) + (1-p[i])*Sp1*Sp2
+    }
+  ## priors
+  Se1 ~ dbeta(1, 1)
+  Sp1 ~ dbeta(1, 1)
+  Se2 ~ dbeta(1, 1)
+  Sp2 ~ dbeta(1, 1)
+  # these priors are uninformative
+  # try this model again with informative priors
+  # based on previous research of these tests in buffaloes
+
+}"
+
+# Compile the model
+model1_jags <- jags.model(textConnection(model1),
+                          inits = list(.RNG.name = "base::Wichmann-Hill",
+                                     .RNG.seed = 2018),
+                          data = list(pop = pop, n = n))
+
+# Simulate the model
+model1_sim <- coda.samples(model = model1_jags,
+                           variable.names = c("p", "Se1", "Se2", "Sp1", "Sp2"),
+                           n.iter = 10000)
+```
+
+```{r Plot the results of model1}
+# Plot the posterior
+plot(model1_sim)
+
+# Summarize the data
+summary(model1_sim)
+
+# Store the MC chain
+model1_chains <- data.frame(model1_sim[[1]], iter = 1:10000)
+
+# Make plots of the different parameters
+
+# Se1 = Se of the TST
+ggplot(data = model1_chains, aes(x = Se1)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model1_chains$Se1), color = "red")
+
+# Se2 = Se of the TB ELISA
+ggplot(data = model1_chains, aes(x = Se2)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model1_chains$Se2), color = "red")
+
+# Sp1 = Sp of the TST
+ggplot(data = model1_chains, aes(x = Sp1)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model1_chains$Sp1), color = "red")
+
+# Sp2 = SP of the TB ELISA
+ggplot(data = model1_chains, aes(x = Sp2)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model1_chains$Sp2), color = "red")
+
+# p1 = prevalence in Park A
+ggplot(data = model1_chains, aes(x = p.1.)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model1_chains$p.1.), color = "red")
+
+# p2 = prevalence in Park B
+ggplot(data = model1_chains, aes(x = p.2.)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model1_chains$p.2.), color = "red")
+
+# Convergence checks
+ densplot(model1_sim)
+ traceplot(model1_sim)
+# You can also use gelman.diag()
+# or gelman.plot() on the model1_sim
+# but you need at least 2 chains for that.
+
+```
+
+```{r Re-run of the analysis with informative priors - model 2}
+
+# Use informative priors according to known previous estimates
+# for the Se and Sp of TST and TB ELISA
+# The function: beta(1,1) * beta(s1,n1-s1) = beta(s1+1,n1-s1+1)
+# in other words: from cross-tabs
+# for Se -> beta(a+1,b+1)
+# for Sp <- beta(d+1,c+1)
+# TST Se = 76.5% and Sp = 99.5% (Michel et al. 2011 and unpublished data)
+Se1 <- hist(rbeta(10000, 138, 43))
+Sp1 <- hist(rbeta(10000, 766, 5))
+# TB ELISA Se = 37.5% and Sp = 100%
+# (van der Heijden et al. 2016 and unpublished data)
+Se2 <- hist(rbeta(10000, 4, 6))
+Sp2 <- hist(rbeta(10000, 15, 1))
+
+# Define the model
+model2 <- "model{
+  for (i in 1:2) {
+p[i] ~ dbeta(1,1)
+pop[i, 1:4] ~ dmulti(par[i,1:4], n[i])
+par[i, 4] <- p[i]*Se1*Se2 + (1-p[i])*(1-Sp1)*(1-Sp2)
+par[i, 2] <- p[i]*Se1*(1-Se2) + (1-p[i])*(1-Sp1)*Sp2
+par[i, 3] <- p[i]*(1-Se1)*Se2 + (1-p[i])*Sp1*(1-Sp2)
+par[i, 1] <- p[i]*(1-Se1)*(1-Se2) + (1-p[i])*Sp1*Sp2
+}
+## priors
+Se1 ~ dbeta(138, 43)
+Sp1 ~ dbeta(766, 5)
+Se2 ~ dbeta(4, 6)
+Sp2 ~ dbeta(15, 1)
+
+}"
+
+# Compile the model
+model2_jags <- jags.model(textConnection(model2),
+                          inits = list(.RNG.name = "base::Wichmann-Hill",
+                                       .RNG.seed = 2018),
+                          data = list(pop = pop, n = n))
+
+# Simulate the model
+model2_sim <- coda.samples(model = model2_jags,
+                           variable.names = c("p", "Se1", "Se2", "Sp1", "Sp2"),
+                           n.iter = 10000)
+```
+
+```{r Plot the results of model2}
+# Plot the posterior
+plot(model2_sim)
+
+# Summarize the data
+summary(model2_sim)
+
+# Store the MC chain
+model2_chains <- data.frame(model2_sim[[1]], iter = 1:10000)
+
+# Make plots of the different parameters
+# Se1 = Se of the TST
+ggplot(data = model2_chains, aes(x = Se1)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model2_chains$Se1), color = "red")
+
+# Se2 = Se of the TB ELISA
+ggplot(data = model2_chains, aes(x = Se2)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model2_chains$Se2), color = "red")
+
+# Sp1 = Sp of the TST
+ggplot(data = model2_chains, aes(x = Sp1)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model2_chains$Sp1), color = "red")
+
+# Sp2 = SP of the TB ELISA
+ggplot(data = model2_chains, aes(x = Sp2)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model2_chains$Sp2), color = "red")
+
+# p1 = prevalence in park A
+ggplot(data = model2_chains, aes(x = p.1.)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model2_chains$p.1.), color = "red")
+
+# p2 = prevalence in park B
+ggplot(data = model2_chains, aes(x = p.2.)) +
+  geom_density() +
+  geom_vline(xintercept = mean(model2_chains$p.2.), color = "red")
+
+# Convergence checks
+ gelman.diag(model2_sim)
+ gelman.plot(model2_sim)
+ densityplot(model2_sim)
+ traceplot(model2_sim)
+
+```
+
+Another way of doing the analysis is like in Cheung et al. 2021 (OIE)
+For this analysis we need some extra packages. This is hard to do on a mac!
+
+```{r Try Cheung et al. 2021 way}
+library(epiR) #for epi.betabuster
+library(R2OpenBUGS) #for driving OpenBUGS from R
+library(mcmcplots) #for plotting
+
+# Specify the model:
+model <- paste0("model{
+
+    # Multinomial Model for the Data
+    x1[1:2,1:2] ~ dmulti(p1[1:2,1:2], n1)
+    x2[1:2,1:2] ~ dmulti(p2[1:2,1:2], n2)
+
+    # Observed prevalence
+    p1[1,1] <- pi1*Se1*Se2+(1-pi1)*(1-Sp1)*(1-Sp2)
+    p1[1,2] <- pi1*Se1*(1-Se2)+(1-pi1)*(1-Sp1)*Sp2
+    p1[2,1] <- pi1*(1-Se1)*Se2+(1-pi1)*Sp1*(1-Sp2)
+    p1[2,2] <- pi1*(1-Se1)*(1-Se2)+(1-pi1)*Sp1*Sp2
+
+    p2[1,1] <- pi2*Se1*Se2+(1-pi2)*(1-Sp1)*(1-Sp2)
+    p2[1,2] <- pi2*Se1*(1-Se2)+(1-pi2)*(1-Sp1)*Sp2
+    p2[2,1] <- pi2*(1-Se1)*Se2+(1-pi2)*Sp1*(1-Sp2)
+    p2[2,2] <- pi2*(1-Se1)*(1-Se2)+(1-pi2)*Sp1*Sp2
+
+    # Priors
+    pi1 ~ dbeta(1,1) #uninformative
+    pi2 ~ dbeta(1,1) #uninformative
+    Se1 ~ dbeta(138,43)
+    Sp1 ~ dbeta(766,5)
+    Se2 ~ dbeta(4,6)
+    Sp2 ~ dbeta(15,1)
+
+}")
+
+
+#w Wite to temporary text file
+write.table(model, file = "model.txt",
+            quote = FALSE, sep = "",
+            row.names = FALSE,
+            col.names = FALSE)
+
+# Data
+# population 1
+n1 <- length(which(btb$Park_ID == "A"))
+hip <- btb[btb$Park_ID == "B", ]
+x1 <- t(matrix(as.vector(table(A$TBELISA_Result,
+                               A$TST_Result)), 2, 2))
+colnames(x1) <- c("TBELISA-", "TBELISA+")
+rownames(x1) <- c("TST-", "TST+")
+x1
+
+# this is in the wrong order, and not sure how to get it correct,
+# so just do it manually.
+x1 <- matrix(c(14, 69, 86, 597), byrow = T, ncol = 2,
+           dimnames = list(c("TST+", "TST-"),
+                         c("TBELISA+", "TBELISA-")))
+x1
+
+
+#population 2
+n2 <- length(which(btb$Park_ID == "B"))
+
+mgr <- btb[btb$Park_ID == "B", ]
+
+x2 <- t(matrix(as.vector(table(B$TBELISA_Result,
+                               B$TST_Result)), 2, 2))
+colnames(x2) <- c("TBELISA-", "TBELISA+")
+rownames(x2) <- c("TST-", "TST+")
+x2
+
+x2 <- matrix(c(9, 32, 39, 151), byrow = T, ncol = 2,
+           dimnames = list(c("TST+", "TST-"),
+                         c("TBELISA+", "TBELISA-")))
+x2
+
+# Set data inputs to BUGS
+dat <- list("x1", "n1", "x2", "n2")
+
+# Set parameters desired to monitor
+paras <- c("Se1", "Sp1", "Se2", "Sp2", "pi1", "pi2")
+
+# Initialising values for 3 chains
+inits <- list(
+  list(Se1 = 0.6, Sp1 = 0.99, Se2 = 0.2, Sp2 = 0.92, pi1 = 0.1, pi2 = 0.35),
+  list(Se1 = 0.5, Sp1 = 0.97, Se2 = 0.1, Sp2 = 0.90, pi1 = 0.35, pi2 = 0.35),
+  list(Se1 = 0.7, Sp1 = 0.94, Se2 = 0.3, Sp2 = 0.94, pi1 = 0.2, pi2 = 0.2))
+
+```
+
+You need Wine to be able to run openBUGS on a mac
+"WINE = /usr/local/bin/wine"
+"WINEPATH = /usr/local/bin/winepath"
+"OpenBUGS.pgm = /Applications/OpenBUGS323/OpenBUGS.exe"
+
+```{r Run the model}
+# run model in OpenBUGS #
+niterations <- 12000
+
+# run with no burnin or thinning, we check these
+# and discard later
+bug.out <- bugs(data = dat, inits = inits, parameters.to.save = paras,
+                n.iter = niterations + 1, n.burnin = 0, n.thin = 1,
+                n.chains = 3, model.file = "model.txt", debug = F, useWINE = T,
+                OpenBUGS.pgm = "/Applications/OpenBUGS323/OpenBUGS.exe",
+                WINE = "/usr/local/bin/wine",
+                WINEPATH = "/usr/local/bin/winepath")
+# the term debug = T will open OpenBUGS window which must be
+# closed to continue
+# while debug = F will run without opening the OpenBUGS window
+
+# model diagnostics and outputs #
+
+# First, check for each inferred parameter that the
+# effective sample size (n.eff) is >200 and that the
+# potential scale reduction factor (Rhat) is very close
+# to 1. Ignore the posterior density estimates at this
+# stage, because we are yet to discard burn-in. Deviance
+# information criterion (DIC) is also available as an
+# estimate of expected predictive error.
+bug.out
+
+# Diagnostics are available when you convert your
+# model output into an MCMC object with this command:
+bug.mcmc <- as.mcmc(bug.out)
+
+# html files with trace, density, and autocorrelation,
+# all on one page. The files will be displayed in your
+# default internet browser when you open the html file
+# produced in the new directory(mcmcout/MCMCoutput.html)
+dir.name <- "mcmcout"
+if (!dir.exists(dir.name)) {
+  dir.create(dir.name)
+  }
+
+mcmcplot(bug.out, title = "Diagnostic plots",
+         filename = "_MCMCoutput",
+         dir = paste0(".//", dir.name, "//"),
+         extension = "html")
+
+# Here, we consider convergence to be achieved after
+# 2000 iterations, so set the burn-in to 2000
+burnin <- 2000
+
+# Final estimates
+k <- seq(burnin + 1, niterations, 1)
+# combine chains post-burnin
+est <- data.frame(rbind(bug.out$sims.array[k, 1, ], bug.out$sims.array[k, 2, ]))
+# medians and 95% credible intervals
+res <- t(apply(est, 2, quantile, probs = c(0.5, 0.025, 0.975)))
+round(res, 3)
+
+# plot the marginal posterior distributions versus
+# their priors
+p.a <- c(138, 766, 4, 15, 1, 1)
+# se1 a, sp1 a, se2 a, sp2 a, pi1 a, pi2 a
+p.b <- c(43, 5, 6, 1, 1, 1)
+# se1 b, sp1 b, se2 b, sp2 b, pi1 b, pi2 b
+# quartz(); on Mac; use quartz() or the default plot viewer
+par(mfrow = c(3, 2))
+for (i in 1:6) {
+  plot(density(est[, i], adjust = 2), type = "l",
+       main = paras[i],
+       xlab = "Proportion", ylab = "Density",
+       xlim = c(0, 1), lwd = 2, las = 1,
+       cex.main = 1.4, cex.lab = 1.4, cex.axis = 1.4)
+  curve(dbeta(x, p.a[i], p.b[i]), lty = 2, lwd = 2, add = T)
+}
+
+```

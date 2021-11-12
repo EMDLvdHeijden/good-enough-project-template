@@ -217,4 +217,175 @@ Untracked files:
 	[31m.gitignore[m
 
 no changes added to commit (use "git add" and/or "git commit -a")
-bash-3.2$ git add typescr
+bash-3.2$ git add typescrtipr[K[K[K[Kupt[K[K[Kipt
+bash-3.2$ git commit typescript -m "another commit"
+[master 2651bec] another commit
+ 1 file changed, 93 insertions(+), 1 deletion(-)
+bash-3.2$ git commit typescript -m "another commit"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[23Padd typescript[8Pstatuscommit anotherfile.txt -m "My commit message"[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Padd anotherfile.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit anotherfile.txt -m "My commit message"[K[C[C[C[C[C[C[C[C[C[Cls[Ktouch anotherfile.txt[C[C[C[C[C[C[C[C[C[Cgit push -u origin master
+Enumerating objects: 8, done.
+Counting objects:  12% (1/8)Counting objects:  25% (2/8)Counting objects:  37% (3/8)Counting objects:  50% (4/8)Counting objects:  62% (5/8)Counting objects:  75% (6/8)Counting objects:  87% (7/8)Counting objects: 100% (8/8)Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects:  20% (1/5)Compressing objects:  40% (2/5)Compressing objects:  60% (3/5)Compressing objects:  80% (4/5)Compressing objects: 100% (5/5)Compressing objects: 100% (5/5), done.
+Writing objects:  16% (1/6)Writing objects:  33% (2/6)Writing objects:  50% (3/6)Writing objects:  66% (4/6)Writing objects:  83% (5/6)Writing objects: 100% (6/6)Writing objects: 100% (6/6), 1.73 KiB | 1.73 MiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/3)[Kremote: Resolving deltas:  33% (1/3)[Kremote: Resolving deltas:  66% (2/3)[Kremote: Resolving deltas: 100% (3/3)[Kremote: Resolving deltas: 100% (3/3), completed with 2 local objects.[K
+remote: This repository moved. Please use the new location:[K
+remote:   git@github.com:EMDLvdHeijden/good-enough-project-template.git[K
+To github.com:EMDLvdHEIJDEN/good-enough-project-template.git
+   f569c9e..2651bec  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+bash-3.2$ git log[K[K[Kstatus
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   typescript[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m.DS_Store[m
+	[31m.gitignore[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git log
+[?1h=[33mcommit 2651becbf7415fd8fe472891fab551585b3034c1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m[m
+Author: EMDLvdHeijden <e.m.d.l.vanderheijden@uu.nl>[m
+Date:   Thu Nov 11 10:45:08 2021 +0100[m
+[m
+    another commit[m
+[m
+[33mcommit 4b35f82b3c81a0c926f51ec335902ca75a9f02bd[m[m
+Author: EMDLvdHeijden <e.m.d.l.vanderheijden@uu.nl>[m
+Date:   Thu Nov 11 10:44:04 2021 +0100[m
+[m
+    My commit message[m
+[m
+[33mcommit f569c9e10dd5dd111126f21b6d24d4a9ba4c9e71[m[m
+Author: EMDLvdHeijden <e.m.d.l.vanderheijden@uu.nl>[m
+Date:   Thu Nov 11 10:40:22 2021 +0100[m
+[m
+    First commit[m
+[K[?1l>bash-3.2$ git log --oneline
+[?1h=[33m2651bec[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m another commit[m
+[33m4b35f82[m My commit message[m
+[33mf569c9e[m First commit[m
+[K[?1l>bash-3.2$ git diff
+[?1h=[1mdiff --git a/typescript b/typescript[m[m
+[1mindex b2f6c88..44435ba 100644[m[m
+[1m--- a/typescript[m[m
+[1m+++ b/typescript[m[m
+[36m@@ -217,4 +217,54 @@[m [mUntracked files:[m[m
+        [31m.gitignore[m[m[m
+ [m[m
+ no changes added to commit (use "git add" and/or "git commit -a")[m[m
+[31m-bash-3.2$ git add typescr[m[m
+\ No newline at end of file[m[m
+[32m+[m[32mbash-3.2$ git add typescript[m[41m[7m^M[27m[m[m
+[32m+[m[32mbash-3.2$ git commit typescript -m "another commit"[m[41m[7m^M[27m[m[m
+[32m+[m[32m[master 2651bec] another commit[m[41m[7m^M[27m[m[m
+[32m+[m[32m 1 file changed, 93 insertions(+), 1 deletion(-)[m[41m[7m^M[27m[m[m
+[32m+[m[32mbash-3.2$ git commit typescript -m "another commit"[7m^M[27mcommit anotherfile.txt -m "My commi[m [32m[m[32m[7m^H^H^H^H^H^H^H^H^H^H^M[27madd anotherfile.txt[7m^M[27mcommit anotherfile.txt -m[7m^M[27mtouch anotherfile.t[m [32m[m[32mxt[7m^M[27mgit push -u origin master[m[41m[7m^M[27m[m[m
+[32m+[m[32mEnumerating objects: 8, done.[m[41m[7m^M[27m[m[m
+[32m+[m[32mCounting objects:  12% (1/8)[7m^M[27mCounting objects:  25% (2/8)[7m^M[27mCounting objects:  37% (3/8)[m [32m[m[32m[7m^M[27mCounting objects:  50% (4/8)[7m^M[27mCounting objects:  62% (5/8)[7m^M[27mCounting objects:  75% (6/8[m [32m[m[32m)[7m^M[27mCounting objects:  87% (7/8)[7m^M[27mCounting objects: 100% (8/8)[7m^M[27mCounting objects: 100% (8/[m [32m[m[32m8), done.[m[41m[7m^M[27m[m[m
+[32m+[m[32mDelta compression using up to 8 threads[m[41m[7m^M[27m[m[m
+[32m+[m[32mCompressing objects:  20% (1/5)[7m^M[27mCompressing objects:  40% (2/5)[7m^M[27mCompressing objects:  [m [32m[m[32m60% (3/5)[7m^M[27mCompressing objects:  80% (4/5)[7m^M[27mCompressing objects: 100% (5/5)[7m^M[27mCompressing [m [32m[m[32mobjects: 100% (5/5), done.[m[41m[7m^M[27m[m[m
+[32m+[m[32mWriting objects:  16% (1/6)[7m^M[27mWriting objects:  33% (2/6)[7m^M[27mWriting objects:  50% (3/6)[7m^M[27mW[m [32m[m[32mriting objects:  66% (4/6)[7m^M[27mWriting objects:  83% (5/6)[7m^M[27mWriting objects: 100% (6/6)[7m^M[27mWri[m [32m[m[32mting objects: 100% (6/6), 1.73 KiB | 1.73 MiB/s, done.[m[41m[7m^M[27m[m[m
+[32m+[m[32mTotal 6 (delta 3), reused 0 (delta 0), pack-reused 0[m[41m[7m^M[27m[m[m
+[32m+[m[32mremote: Resolving deltas:   0% (0/3)[7m^M[27mremote: Resolving deltas:  33% (1/3)[7m^M[27mremote: Reso[m [32m[m[32mlving deltas:  66% (2/3)[7m^M[27mremote: Resolving deltas: 100% (3/3)[7m^M[27mremote: Resolving deltas:[m [32m[m[32m 100% (3/3), completed with 2 local objects.[m[41m[7m^M[27m[m[m
+[32m+[m[32mremote: This repository moved. Please use the new location:[m[41m[7m^M[27m[m[m
+[32m+[m[32mremote:   git@github.com:EMDLvdHeijden/good-enough-project-template.git[m[41m[7m^M[27m[m[m
+[32m+[m[32mTo github.com:EMDLvdHEIJDEN/good-enough-project-template.git[m[41m[7m^M[27m[m[m
+[32m+[m[32m   f569c9e..2651bec  master -> master[m[41m[7m^M[27m[m[m
+[32m+[m[32mBranch 'master' set up to track remote branch 'master' from 'origin'.[m[41m[7m^M[27m[m[m
+[32m+[m[32mbash-3.2$ git status[m[41m[7m^M[27m[m[m
+[32m+[m[32mOn branch master[m[41m[7m^M[27m[m[m
+[32m+[m[32mYour branch is up to date with 'origin/master'.[m[41m[7m^M[27m[m[m
+[32m+[m[41m[7m^M[27m[m[m
+[32m+[m[32mChanges not staged for commit:[m[41m[7m^M[27m[m[m
+[32m+[m[32m  (use "git add <file>..." to update what will be committed)[m[41m[7m^M[27m[m[m
+[32m+[m[32m  (use "git restore <file>..." to discard changes in working directory)[m[41m[7m^M[27m[m[m
+[32m+[m       [32m[31mmodified:   typescript[m[m[41m[7m^M[27m[m[m
+[32m+[m[41m[7m^M[27m[m[m
+[32m+[m[32mUntracked files:[m[41m[7m^M[27m[m[m
+[32m+[m[32m  (use "git add <file>..." to include in what will be committed)[m[41m[7m^M[27m[m[m
+[32m+[m       [32m[31m.DS_Store[m[m[41m[7m^M[27m[m[m
+[32m+[m       [32m[31m.gitignore[m[m[41m[7m^M[27m[m[m
+[32m+[m[41m[7m^M[27m[m[m
+[32m+[m[32mno changes added to commit (use "git add" and/or "git commit -a")[m[41m[7m^M[27m[m[m
+[32m+[m[32mbash-3.2$ git log[m[41m[7m^M[27m[m[m
+[32m+[m[32m[7m^M[27m[33mcommit 2651becbf7415fd8fe472891fab551585b3034c1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m[m[m[41m[7m^M[27m[m[m
+[32m+[m[32mAuthor: EMDLvdHeijden <e.m.d.l.vanderheijden@uu.nl>[m[m[41m[7m^M[27m[m[m
+[32m+[m[32mDate:   Thu Nov 11 10:45:08 2021 +0100[m[m[41m[7m^M[27m[m[m
+[32m+[m[32m[m[m[41m[7m^M[27m[m[m
+[32m+[m[32m    another commit[m[m[41m[7m^M[27m[m[m
+[32m+[m[32m[m[m[41m[7m^M[27m[m[m
+[32m+[m[32m[33mcommit 4b35f82b3c81a0c926f51ec335902ca75a9f02bd[m[m[m[41m[7m^M[27m[m[m
+[32m+[m[32mAuthor: EMDLvdHeijden <e.m.d.l.vanderheijden@uu.nl>[m[m[41m[7m^M[27m[m[m
+[32m+[m[32mDate:   Thu Nov 11 10:44:04 2021 +0100[m[m[41m[7m^M[27m[m[m
+[32m+[m[32m[m[m[41m[7m^M[27m[m[m
+[32m+[m[32m    My commit message[m[m[41m[7m^M[27m[m[m
+:[K[K[K:[K[K:[K[K[7mNo next tag  (press RETURN)[27m[66;1H[K[K:[K[K[32m+[m[32m[m[m[41m[7m^M[27m[m[m
+[32m+[m[32m[33mcommit f569c9e10dd5dd111126f21b6d24d4a9ba4c9e71[m[m[m[41m[7m^M[27m[m[m
+[32m+[m[32mAuthor: EMDLvdHeijden <e.m.d.l.vanderheijden@uu.nl>[m[m[41m[7m^M[27m[m[m
+[32m+[m[32mDate:   Thu Nov 11 10:40:22 2021 +0100[m[m[41m[7m^M[27m[m[m
+[32m+[m[32m[m[m[41m[7m^M[27m[m[m
+[32m+[m[32m    First commit[m[m[41m[7m^M[27m[m[m
+[32m+[m[32m[7m^M[27mbash-3.2$ git log --on[m[m
+\ No newline at end of file[m[m
+[7m(END)[27m[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[?1l>bash-3.2$ git diff HEAD~3
+fatal: ambiguous argument 'HEAD~3': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+bash-3.2$ git diff HEAD~3[C[C[C[C[C[C[C[C[C[C[Kgit --help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone             Clone a repository into a new directory
+   init              Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add               Add file contents to the index
+   mv                Move or rename a file, a directory, or a symlink
+   restore           Restore working tree files
+   rm                Remove files from the working tree and from the index
+   sparse-checkout   Initialize and modify the sparse-checkout
+
+examine the history and state (see also: git help revisions)
+   bisect            Use binary search to find the commit that introduced a bug
+   diff              Show changes between commits, commit and working tree, etc
+   grep              Print lines matching a pattern
+   log               Show commit logs
+   show              Show various types of objects
+   status            Show the working tree status
+
+grow, mark and tweak your common history
+   branch            List, create, or delete branches
+   commit            Record changes to the repository
+   merge             Join two or more development histories together
+   rebase            Reapply commits on top of another base tip
+   reset             Reset current HEAD to the specified state
+   switch            Switch branches
+   tag               Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch             Download objects and refs from another repository
+   pull              Fetch from and integrate with another repository or a local branch
+   push              Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+bash-3.2$ ei[Kxit
+exit
+
+Script done on Thu Nov 11 17:29:10 2021
