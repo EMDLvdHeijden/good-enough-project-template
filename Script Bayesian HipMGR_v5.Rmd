@@ -16,6 +16,7 @@ library(rjags)
 library(ggplot2)
 library(coda)
 getwd()
+sessionInfo()
 ```
 
 ```{r Load the data}
@@ -229,7 +230,8 @@ ggplot(data = model2_chains, aes(x = p.2.)) +
 ```
 
 Another way of doing the analysis is like in Cheung et al. 2021 (OIE)
-For this analysis we need some extra packages. This is hard to do on a mac!
+For this analysis we need some extra packages that will be loaded below.
+WINE was hard to install on a mac and took me quite some time to get right and to get R2OpenBUGS to work.
 
 ```{r Try Cheung et al. 2021 way}
 library(epiR) #for epi.betabuster

@@ -11,6 +11,31 @@ The data needs to be formatted as a data frame with at least 3 columns specifyin
 The project is available from https://github.com/EMDLvdHeijden/good-enough-project-template.
 The script is in the main folder "good-enough-project-template" and is titled "Script Bayesian HipMGR_v5.Rmd". This should be opened in R Studio and can be run from there. A randomly generated dataset can also be found in this folder ("Database_HiPMGR_randomized).
 
+## Dependencies
+R sessionInfo()
+[1] "/Users/emdlvanderheijden/Documents/Work/Postdoc_VI _UU/Research/Courses/Writing_reproducible_code/good-enough-project-template"
+R version 4.1.1 (2021-08-10)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur 10.16
+
+Matrix products: default
+LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] ggplot2_3.3.5 rjags_4-12    coda_0.19-4   knitr_1.36   
+
+loaded via a namespace (and not attached):
+ [1] magrittr_2.0.1   tidyselect_1.1.1 munsell_0.5.0    colorspace_2.0-2 lattice_0.20-45  R6_2.5.1         rlang_0.4.12     fansi_0.5.0     
+ [9] dplyr_1.0.7      tools_4.1.1      grid_4.1.1       gtable_0.3.0     xfun_0.27        utf8_1.2.2       DBI_1.1.1        withr_2.4.2     
+[17] ellipsis_0.3.2   assertthat_0.2.1 tibble_3.1.5     lifecycle_1.0.1  crayon_1.4.1     purrr_0.3.4      vctrs_0.3.8      glue_1.4.2      
+[25] compiler_4.1.1   pillar_1.6.4     generics_0.1.1   scales_1.1.1     pkgconfig_2.0.3 
+
 ## Project organization
 - PG = project-generated
 - HW = human-writable
