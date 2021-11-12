@@ -6,7 +6,7 @@ This project takes the test outcome of two diagnostic tests for bovine tuberculo
 (2) The tests need to be performed on at least two different populations, with differing prevalences of the disease.
 (3) The tests need to perform the same in both populations, i.e. the Se and Sp should be robust and not be influenced by other factors that are likely to be different in the two study populations.
 
-The data needs to be formatted as a data frame with at least 3 columns specifying the Park_ID, and the outcomes of Test_1 and Test_2.
+The data needs to be formatted as a data frame with at least 3 columns specifying the Park_ID, and the outcomes of TST_Result and TBELISA_Result.
 
 The project is available from https://github.com/EMDLvdHeijden/good-enough-project-template.
 The script is in the main folder "good-enough-project-template" and is titled "Script Bayesian HipMGR_v5.Rmd". This should be opened in R Studio and can be run from there. A randomly generated dataset can also be found in this folder ("Database_HiPMGR_randomized).
