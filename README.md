@@ -11,11 +11,11 @@ This project takes the test outcome of two diagnostic tests for bovine tuberculo
 The data needs to be formatted as a data frame with at least 3 columns specifying the Park_ID, and the outcomes of TST_Result and TBELISA_Result.
 
 The project is available from https://github.com/EMDLvdHeijden/good-enough-project-template.
-The script is in the main folder "good-enough-project-template" and is titled "Script Bayesian HipMGR_v5.Rmd". This should be opened in R Studio and can be run from there. A randomly generated dataset can also be found in this folder ("Database_HiPMGR_randomized).
+The script is in the main folder "good-enough-project-template" and is titled "Script Bayesian HipMGR_v5.Rmd". This should be opened in R Studio and can be run from there. A randomly generated dataset can also be found in this folder ("Database_HiPMGR_randomized.txt").
 
 ## Dependencies
 R sessionInfo()
-[1] "/Users/emdlvanderheijden/Documents/Work/Postdoc_VI _UU/Research/Courses/Writing_reproducible_code/good-enough-project-template"
+[1]
 R version 4.1.1 (2021-08-10)
 Platform: x86_64-apple-darwin17.0 (64-bit)
 Running under: macOS Big Sur 10.16
